@@ -45,7 +45,7 @@ main {
   padding: 10px;
   flex-direction: column;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  padding-top: 60px; /* Add a top margin to push the content below the header */
+  padding-top: 100px; /* Add a top margin to push the content below the header */
 }
 
 .sticky-header {
@@ -122,7 +122,7 @@ main {
 }
 
 .event-section.upcoming-events, .event-section.past-events {
-  max-width: 800px;
+  max-width: 80%;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

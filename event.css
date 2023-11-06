@@ -16,7 +16,7 @@ header {
   background-color: var(--primary-color);
   color: var(--background-color);
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 nav ul {
@@ -29,7 +29,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 nav a {
@@ -45,7 +45,7 @@ main {
   padding: 10px;
   flex-direction: column;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  padding-top: 60px; /* Add a top margin to push the content below the header */
+  padding-top: 100px; /* Add a top margin to push the content below the header */
 }
 
 .sticky-header {

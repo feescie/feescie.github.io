@@ -49,7 +49,6 @@
                         const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
                         if (imageAttachment) {
                             eventImage.src = imageAttachment.fileUrl;
-                            console.log(eventImage.src)
                             eventImage.alt = 'Event Image';
                             eventItem.appendChild(eventImage);
                         }

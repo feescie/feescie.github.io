@@ -149,6 +149,9 @@ main {
 
 #upcoming-event-list-left,
 #upcoming-event-list-right {
-    width: calc(50% - 10px); /* Calculate the width for each column, minus the gap */
+    width: calc(50% - 10px);
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }

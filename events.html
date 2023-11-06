@@ -48,7 +48,7 @@
                         // If there are attachments, check for images and display the first one
                         const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
                         if (imageAttachment) {
-                            const match = imageAttachment.fileUrl.match(/\/d\/([^/]+)/);
+                            const match = imageAttachment.fileUrl.const match = url.match(/id=([^&]+)/);
                             if (match) {
                               const imgID = match[1];
                               console.log(extractedPart);

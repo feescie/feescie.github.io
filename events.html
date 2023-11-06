@@ -10,7 +10,10 @@
         <h1>Upcoming Events</h1>
     </header>   
     <main>
-        <div id="event-list"></div>
+        <h2>Upcoming Events</h2>
+        <div id="upcoming-event-list"></div>
+        <h2>Past Events</h2>
+        <div id="past-event-list"></div>
     </main>
 
     <script>
@@ -21,6 +24,9 @@
         // URL to fetch calendar events
         const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`;
 
+        // Get the current date
+        const currentDate = new Date();
+
         // Fetch calendar events
         fetch(url)
             .then(response => response.json())
@@ -28,42 +34,69 @@
                 const events = data.items;
 
                 // Process and display the events
-                const eventListContainer = document.getElementById("event-list");
+                const upcomingEventListContainer = document.getElementById("upcoming-event-list");
+                const pastEventListContainer = document.getElementById("past-event-list");
+                
                 events.forEach(event => {
-                    const summary = event.summary;
-                    const start = event.start.dateTime;
-                    const attachments = event.attachments;
+                    const start = new Date(event.start.dateTime);
 
-                    // Create elements for the event
-                    const eventItem = document.createElement("div");
-                    eventItem.classList.add("event-container");
-                    const eventTitle = document.createElement("h3");
-                    eventTitle.classList.add("event-title");
-                    const eventStartDate = document.createElement("p");
-                    eventStartDate.classList.add("event-start-date");
-                    const eventImage = document.createElement("img");
-                    eventImage.classList.add("event-image");
+                    if (start >= currentDate) {
+                        // Upcoming event
+                        const summary = event.summary;
+                        const attachments = event.attachments;
 
-                    // Set content for the elements
-                    eventTitle.textContent = summary;
-                    eventStartDate.textContent = ` Start: ${start}`;
-                    
-                    if (attachments && attachments.length > 0) {
-                        // If there are attachments, check for images and display the first one
-                        const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
-                        if (imageAttachment) {
-                            const match = imageAttachment.fileUrl.match(/id=([^&]+)/);
-                            const imgID = match[1];
-                            eventImage.src = `https://drive.google.com/uc?export=view&id=${imgID}`;
-                            eventImage.alt = 'Event Image';
-                            eventItem.appendChild(eventImage);
+                        // Create elements for the event
+                        const eventItem = document.createElement("div");
+                        eventItem.classList.add("event-container");
+                        const eventTitle = document.createElement("h3");
+                        eventTitle.classList.add("event-title");
+                        const eventStartDate = document.createElement("p");
+                        eventStartDate.classList.add("event-start-date");
+                        const eventImage = document.createElement("img");
+                        eventImage.classList.add("event-image");
+
+                        // Set content for the elements
+                        eventTitle.textContent = summary;
+                        eventStartDate.textContent = `Start: ${start}`;
+                        
+                        if (attachments && attachments.length > 0) {
+                            // If there are attachments, check for images and display the first one
+                            const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
+                            if (imageAttachment) {
+                                const match = imageAttachment.fileUrl.match(/id=([^&]+)/);
+                                const imgID = match[1];
+                                eventImage.src = `https://drive.google.com/uc?export=view&id=${imgID}`;
+                                eventImage.alt = 'Event Image';
+                                eventItem.appendChild(eventImage);
+                            }
                         }
-                    }
 
-                    // Append elements to the event-list container
-                    eventItem.appendChild(eventTitle);
-                    eventItem.appendChild(eventStartDate);
-                    eventListContainer.appendChild(eventItem);
+                        // Append elements to the upcoming event list container
+                        eventItem.appendChild(eventTitle);
+                        eventItem.appendChild(eventStartDate);
+                        upcomingEventListContainer.appendChild(eventItem);
+                    } else {
+                        // Past event
+                        const summary = event.summary;
+
+                        // Create elements for the past event
+                        const pastEventItem = document.createElement("div");
+                        pastEventItem.classList.add("event-container");
+                        pastEventItem.classList.add("past-event");
+                        const pastEventTitle = document.createElement("h3");
+                        pastEventTitle.classList.add("event-title");
+                        const pastEventStartDate = document.createElement("p");
+                        pastEventStartDate.classList.add("event-start-date");
+
+                        // Set content for the elements
+                        pastEventTitle.textContent = summary;
+                        pastEventStartDate.textContent = `Start: ${start}`;
+
+                        // Append elements to the past event list container
+                        pastEventItem.appendChild(pastEventTitle);
+                        pastEventItem.appendChild(pastEventStartDate);
+                        pastEventListContainer.appendChild(pastEventItem);
+                    }
                 });
             })
             .catch(error => {

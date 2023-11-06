@@ -82,6 +82,21 @@ main {
   background-color: rgba(255, 255, 255, 0.8)
 }
 
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.event-section {
+  width: 100%; /* Full width for each section */
+  margin: 20px 0; /* Adjust margin as needed */
+  text-align: center;
+}
+
 /* Add the carousel styles */
 .carousel {
   display: flex;

@@ -21,19 +21,29 @@
     </div>
 
     <main>
-        <h2>Upcoming Events</h2>
-        <div id="upcoming-event-list"></div>
-        <h2>Past Events</h2>
-        <div id="past-event-list"></div>
+        <div class="event-section">
+            <h2>Upcoming Events</h2>
+            <div id="upcoming-event-list"></div>
+        </div>
+        <div class="event-section">
+            <h2>Past Events</h2>
+            <div id="past-event-list"></div>
+        </div>
     </main>
 
     <script>
         function formatTime(dateTimeString) {
             const date = new Date(dateTimeString);
-            const hours = date.getHours();
-            const minutes = date.getMinutes();
-
-            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZone: 'Europe/Amsterdam' // Change to the appropriate time zone
+            };
+            return date.toLocaleString('en-US', options);
         }
 
         // Define your API key and calendar ID
@@ -55,7 +65,16 @@
                 // Process and display the events
                 const upcomingEventListContainer = document.getElementById("upcoming-event-list");
                 const pastEventListContainer = document.getElementById("past-event-list");
-                
+
+                // Sort events by start date
+                events.sort((event1, event2) => {
+                    const start1 = new Date(event1.start.dateTime);
+                    const start2 = new Date(event2.start.dateTime);
+                    return start1 - start2;
+                });
+
+                const currentDate = new Date();
+
                 events.forEach(event => {
                     const start = new Date(event.start.dateTime);
 
@@ -76,8 +95,8 @@
 
                         // Set content for the elements
                         eventTitle.textContent = summary;
-                        eventStartDate.textContent = `Start: ${formatTime(start)}`;
-                        
+                        eventStartDate.textContent = `Start: ${formatDateTime(start)}`;
+
                         if (attachments && attachments.length > 0) {
                             // If there are attachments, check for images and display the first one
                             const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
@@ -109,7 +128,7 @@
 
                         // Set content for the elements
                         pastEventTitle.textContent = summary;
-                        pastEventStartDate.textContent = `Start: ${start}`;
+                        pastEventStartDate.textContent = `Start: ${formatDateTime(start)}`;
 
                         // Append elements to the past event list container
                         pastEventItem.appendChild(pastEventTitle);

@@ -19,15 +19,6 @@ body {
   background-color: var(--background-color);
 }
 
-/* Adjust styles for the header and navigation */
-.sticky-header {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-}
-
 nav ul {
   background-color: var(--primary-color);
   color: var(--background-color);

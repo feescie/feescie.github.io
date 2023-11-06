@@ -105,54 +105,6 @@ nav a {
   text-align: center;
 }
 
-/* Add the carousel styles */
-.carousel {
-  display: flex;
-  overflow: hidden;
-  animation: carouselAnimation 30s linear infinite;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-.carousel img {
-  max-width: 100%;
-  height: auto;
-  animation: slideImage 30s linear infinite;
-}
-
-@keyframes carouselAnimation {
-  0% {
-      transform: translateX(0);
-  }
-  33% {
-      transform: translateX(-100%);
-  }
-  66% {
-      transform: translateX(-200%);
-  }
-  100% {
-      transform: translateX(0);
-  }
-}
-
-@keyframes slideImage {
-  0% {
-      transform: translateX(0);
-  }
-  33% {
-      transform: translateX(100%);
-  }
-  66% {
-      transform: translateX(200%);
-  }
-  100% {
-      transform: translateX(0);
-  }
-}
 
 /* Style for the content */
 .content {

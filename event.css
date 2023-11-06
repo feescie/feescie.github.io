@@ -45,7 +45,7 @@ main {
   padding: 10px;
   flex-direction: column;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  padding-top: 20%; /* Add a top margin to push the content below the header */
+  padding-top: 10%; /* Add a top margin to push the content below the header */
 }
 
 .sticky-header {
@@ -112,7 +112,6 @@ main {
   text-align: center;
   background-color: #d147b3; /* Give them a background color */
   color: white;
-  padding: 2.5%;
 }
 
 .event-section h2 {

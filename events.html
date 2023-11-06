@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Events Gallery</title>
+    <link rel="stylesheet" type="text/css" href="event.css">
 </head>
 <body>
     <header>
@@ -11,8 +12,7 @@
     <main>
         <div id="event-list"></div>
     </main>
-        
-<!--     <img src="https://drive.google.com/uc?export=view&id=1R0PYbEqEmFnAQH_kSziFXPNwlRbCK81-" alt="Image Description"> -->
+
     <script>
         // Define your API key and calendar ID
         const apiKey = 'AIzaSyD4br-t_xdQt4JF3iyhuxs37CXeQ01He40';
@@ -36,9 +36,13 @@
 
                     // Create elements for the event
                     const eventItem = document.createElement("div");
+                    eventItem.classList.add("event-container");
                     const eventTitle = document.createElement("h3");
+                    eventTitle.classList.add("event-title");
                     const eventStartDate = document.createElement("p");
+                    eventStartDate.classList.add("event-start-date");
                     const eventImage = document.createElement("img");
+                    eventImage.classList.add("event-image");
 
                     // Set content for the elements
                     eventTitle.textContent = summary;
@@ -51,7 +55,6 @@
                             const match = imageAttachment.fileUrl.match(/id=([^&]+)/);
                             const imgID = match[1];
                             eventImage.src = `https://drive.google.com/uc?export=view&id=${imgID}`;
-                            // https://drive.google.com/file/d/1R0PYbEqEmFnAQH_kSziFXPNwlRbCK81-/view
                             eventImage.alt = 'Event Image';
                             eventItem.appendChild(eventImage);
                         }
@@ -67,5 +70,5 @@
                 console.error('Error fetching Google Calendar data: ', error);
             });
     </script>
-    
+</body>
 </html>

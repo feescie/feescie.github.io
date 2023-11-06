@@ -1,0 +1,51 @@
+/* Define the color variables */
+:root {
+  --primary-color: #0277b3;
+  --text-color: #000000; /* Black */
+  --background-color: #ffffff; /* White */
+}
+
+/* Apply the color scheme to elements */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 20px;
+}
+
+nav ul {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: var(--background-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  margin: 20px;
+  padding: 20px;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 10px;
+}

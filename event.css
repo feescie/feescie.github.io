@@ -128,7 +128,7 @@ main {
 }
 
 .event-section.upcoming-events, .event-section.past-events {
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color:  var(--primary-color);

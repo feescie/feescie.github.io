@@ -65,16 +65,7 @@
                 // Process and display the events
                 const upcomingEventListContainer = document.getElementById("upcoming-event-list");
                 const pastEventListContainer = document.getElementById("past-event-list");
-
-                // Sort events by start date
-                events.sort((event1, event2) => {
-                    const start1 = new Date(event1.start.dateTime);
-                    const start2 = new Date(event2.start.dateTime);
-                    return start1 - start2;
-                });
-
-                const currentDate = new Date();
-
+                
                 events.forEach(event => {
                     const start = new Date(event.start.dateTime);
 
@@ -95,8 +86,8 @@
 
                         // Set content for the elements
                         eventTitle.textContent = summary;
-                        eventStartDate.textContent = `Start: ${formatDateTime(start)}`;
-
+                        eventStartDate.textContent = `Start: ${formatTime(start)}`;
+                        
                         if (attachments && attachments.length > 0) {
                             // If there are attachments, check for images and display the first one
                             const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
@@ -128,7 +119,7 @@
 
                         // Set content for the elements
                         pastEventTitle.textContent = summary;
-                        pastEventStartDate.textContent = `Start: ${formatDateTime(start)}`;
+                        pastEventStartDate.textContent = `Start: ${start}`;
 
                         // Append elements to the past event list container
                         pastEventItem.appendChild(pastEventTitle);

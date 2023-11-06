@@ -15,7 +15,7 @@ header {
   background-color: var(--primary-color);
   color: var(--background-color);
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 main {
@@ -24,6 +24,18 @@ main {
   justify-content: center; /* Center-align the event blocks */
   padding: 10px;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 100;
+}
+
+.sticky-header header {
+  text-align: center;
+  padding: 20px;
 }
 
 .event-container {

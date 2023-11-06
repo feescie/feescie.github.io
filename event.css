@@ -87,7 +87,7 @@ main {
   font-size: 18px;
   margin: 0;
   color: var(--text-color);
-  flex: 1; /* Allow title to expand to available space */
+  /* flex: 1; */
 }
 
 .event-start-date {

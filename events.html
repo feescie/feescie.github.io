@@ -23,8 +23,10 @@
     <main>
         <div class="event-section upcoming-events">
             <h2>Upcoming Events</h2>
-            <div id="upcoming-event-list left"></div>
-            <div id="upcoming-event-list right"></div>
+            <div class="event-list-container">
+                <div id="upcoming-event-list-left"></div>
+                <div id="upcoming-event-list-right"></div>
+            </div>
         </div>
         <div class="event-section past-events">
             <h2>Past Events</h2>
@@ -75,8 +77,8 @@
 
                 // Process and display the events
                 let counter = 0;
-                const upcomingEventListLeft = document.getElementById("upcoming-event-list left");
-                const upcomingEventListRight = document.getElementById("upcoming-event-list right");
+                const upcomingEventListLeft = document.getElementById("upcoming-event-list-left");
+                const upcomingEventListRight = document.getElementById("upcoming-event-list-right");
                 const pastEventListContainer = document.getElementById("past-event-list");
                 
                 events.forEach(event => {

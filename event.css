@@ -127,14 +127,6 @@ main {
   gap: 20px; /* Adjust the gap between event-container divs */
 }
 
-
-.left, .right{
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-}
-
 .event-section.upcoming-events, .event-section.past-events {
   max-width: 80%;
   margin: 0 auto;
@@ -143,4 +135,20 @@ main {
   color: white;
   padding: 2%;
   margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between columns as needed */
+}
+
+#upcoming-event-list-left,
+#upcoming-event-list-right {
+    width: calc(50% - 10px); /* Calculate the width for each column, minus the gap */
+    padding: 10px;
 }

@@ -106,6 +106,19 @@ section {
   margin-bottom: 20px;
 }
 
+.about-section, .events-section {
+  background-color: white; /* White background for sections */
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-section h2, .events-section h2 {
+  text-align: center;
+}
+
 footer {
   color: #000000;
   background-color: var(--primary-color);

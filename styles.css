@@ -10,30 +10,26 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent body overflow */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* 100% viewport height */
   background-color: var(--background-color);
 }
 
-nav ul {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  list-style: none;
-  padding: 0;
+/* Center the header text vertically and horizontally */
+.content {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
+  text-align: center;
 }
 
-nav li {
-  margin: 0 20px;
+header {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
 }
 
-nav a {
-  color: var(--background-color);
-  text-decoration: none;
-  font-weight: bold;
+h1 {
+  font-size: 2rem; /* Adjust font size as needed */
+  margin: 0;
 }

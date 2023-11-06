@@ -41,13 +41,14 @@
 
                     // Set content for the elements
                     eventTitle.textContent = summary;
-                    eventStartDate.textContent = `Start: ${start}`;
+                    eventStartDate.textContent = ` Start: ${start}`;
                     
                     if (attachments && attachments.length > 0) {
                         // If there are attachments, check for images and display the first one
                         const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
                         if (imageAttachment) {
                             eventImage.src = imageAttachment.fileUrl;
+                            console.log(eventImage.src)
                             eventImage.alt = 'Event Image';
                             eventItem.appendChild(eventImage);
                         }

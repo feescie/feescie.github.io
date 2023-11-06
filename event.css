@@ -45,6 +45,7 @@ main {
   padding: 10px;
   flex-direction: column;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  margin-top: 60px; /* Add a top margin to push the content below the header */
 }
 
 .sticky-header {

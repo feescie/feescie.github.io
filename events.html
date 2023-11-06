@@ -6,27 +6,42 @@
 </head>
 <body>
     <h1>Upcoming Events</h1>
-    <div id="event-gallery"></div>
+    <div id="event-list"></div>
 
     <script>
         fetch('https://calendar.google.com/calendar/ical/feestcie%40vu-orkest.nl/public/basic.ics')
         .then(response => response.text())
         .then(data => {
-        // Parse the iCal data
-        const jcalData = ICAL.parse(data);
-        const comp = new ICAL.Component(jcalData);
-        const events = comp.getAllProperties("vevent");
-    
-        // Display events
-        events.forEach(event => {
-            const summary = event.getFirstValue("summary");
-            const start = event.getFirstValue("dtstart");
-            console.log(`Event: ${summary} - Start: ${start.toString()}`);
-            // You can display the event information on your webpage instead of logging to the console.
-        });
+            // Parse the iCal data
+            const jcalData = ICAL.parse(data);
+            const comp = new ICAL.Component(jcalData);
+            const events = comp.getAllProperties("vevent");
+
+            // Get the event-list container
+            const eventListContainer = document.getElementById("event-list");
+
+            // Display events
+            events.forEach(event => {
+                const summary = event.getFirstValue("summary");
+                const start = event.getFirstValue("dtstart");
+
+                // Create elements for the event
+                const eventItem = document.createElement("div");
+                const eventTitle = document.createElement("h3");
+                const eventStartDate = document.createElement("p");
+
+                // Set content for the elements
+                eventTitle.textContent = summary;
+                eventStartDate.textContent = `Start: ${start.toString()}`;
+
+                // Append elements to the event-list container
+                eventItem.appendChild(eventTitle);
+                eventItem.appendChild(eventStartDate);
+                eventListContainer.appendChild(eventItem);
+            });
         })
         .catch(error => {
-        console.error('Error fetching or parsing iCal data: ', error);
+            console.error('Error fetching or parsing iCal data: ', error);
         });
     </script>
     

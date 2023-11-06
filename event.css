@@ -124,12 +124,8 @@ main {
   max-width: 80%;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.upcoming-events {
-  background-color: #0277b3; /* Set the background color for Upcoming Events section */
-}
-
-.past-events {
-  background-color: #d147b3; /* Set the background color for Past Events section */
+  background-color:  var(--primary-color);
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
 }

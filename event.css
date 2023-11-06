@@ -74,6 +74,7 @@ main {
   border: 1px solid #ddd;
   width: calc(49% - 20px); /* 49% to leave a small gap between the columns */
   text-align: center;
+  margin: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -124,6 +125,14 @@ main {
   flex-wrap: wrap;
   justify-content: space-between; /* Spread items evenly between columns */
   gap: 20px; /* Adjust the gap between event-container divs */
+}
+
+
+.left, .right{
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 .event-section.upcoming-events, .event-section.past-events {

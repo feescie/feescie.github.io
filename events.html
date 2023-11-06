@@ -74,6 +74,11 @@
             .then(response => response.json())
             .then(data => {
                 const events = data.items;
+                events.sort((a, b) => {
+                    const dateA = new Date(a.start.dateTime);
+                    const dateB = new Date(b.start.dateTime);
+                    return dateA - dateB;
+                });
 
                 // Process and display the events
                 let counter = 0;

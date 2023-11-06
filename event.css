@@ -8,6 +8,7 @@ body {
   font-family: Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
+  margin: 0; /* Remove default body margin */
 }
 
 header {
@@ -21,6 +22,9 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 10px;
+  overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  max-height: 100vh; /* Set a maximum height to fit the viewport */
 }
 
 .event-container {

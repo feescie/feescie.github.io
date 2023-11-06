@@ -86,3 +86,11 @@ main {
   text-align: center;
   position: relative;
 }
+
+footer {
+  color: #000000;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 10px;
+}

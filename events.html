@@ -9,40 +9,43 @@
     <div id="event-list"></div>
 
     <script>
-        fetch('https://calendar.google.com/calendar/ical/feestcie%40vu-orkest.nl/public/basic.ics')
-        .then(response => response.text())
-        .then(data => {
-            // Parse the iCal data
-            const jcalData = ICAL.parse(data);
-            const comp = new ICAL.Component(jcalData);
-            const events = comp.getAllProperties("vevent");
+        // Define your API key and calendar ID
+        const apiKey = 'AIzaSyD4br-t_xdQt4JF3iyhuxs37CXeQ01He40';
+        const calendarId = 'feestcie@vu-orkest.nl';
 
-            // Get the event-list container
-            const eventListContainer = document.getElementById("event-list");
+        // URL to fetch calendar events
+        const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`;
 
-            // Display events
-            events.forEach(event => {
-                const summary = event.getFirstValue("summary");
-                const start = event.getFirstValue("dtstart");
+        // Fetch calendar events
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const events = data.items;
 
-                // Create elements for the event
-                const eventItem = document.createElement("div");
-                const eventTitle = document.createElement("h3");
-                const eventStartDate = document.createElement("p");
+                // Process and display the events
+                const eventListContainer = document.getElementById("event-list");
+                events.forEach(event => {
+                    const summary = event.summary;
+                    const start = event.start.dateTime;
 
-                // Set content for the elements
-                eventTitle.textContent = summary;
-                eventStartDate.textContent = `Start: ${start.toString()}`;
+                    // Create elements for the event
+                    const eventItem = document.createElement("div");
+                    const eventTitle = document.createElement("h3");
+                    const eventStartDate = document.createElement("p");
 
-                // Append elements to the event-list container
-                eventItem.appendChild(eventTitle);
-                eventItem.appendChild(eventStartDate);
-                eventListContainer.appendChild(eventItem);
+                    // Set content for the elements
+                    eventTitle.textContent = summary;
+                    eventStartDate.textContent = `Start: ${start}`;
+
+                    // Append elements to the event-list container
+                    eventItem.appendChild(eventTitle);
+                    eventItem.appendChild(eventStartDate);
+                    eventListContainer.appendChild(eventItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching Google Calendar data: ', error);
             });
-        })
-        .catch(error => {
-            console.error('Error fetching or parsing iCal data: ', error);
-        });
     </script>
     
 </html>

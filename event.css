@@ -1,0 +1,29 @@
+/* Define the color variables */
+:root {
+    --primary-color: #0277b3;
+    --text-color: #000000; /* Black */
+    --background-color: #ffffff; /* White */
+  }
+  
+  /* Apply the color scheme to elements */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    background: transparent;
+    height: auto;
+    overflow-x: hidden;
+  }
+  
+  /* Apply color scheme to header and navigation */
+  header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 20px;
+  }
+
+  

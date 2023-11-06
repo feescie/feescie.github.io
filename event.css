@@ -106,13 +106,12 @@ main {
 }
 
 .event-section {
-  width: 100%; /* Set the width of the event section to 100% */
-  margin: 20px 0; /* Adjust margin as needed */
+  width: 95%; /* Set the width of the event section to 100% */
+  margin: 2.5% 0; /* Adjust margin as needed */
   text-align: center;
   background-color: #d147b3; /* Give them a background color */
   color: white;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 2.5%;
 }
 
 .event-section h2 {
@@ -133,6 +132,6 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color:  var(--primary-color);
   color: white;
-  padding: 10%;
-  margin-bottom: 20px;
+  padding: 5%;
+  margin-bottom: 10%;
 }

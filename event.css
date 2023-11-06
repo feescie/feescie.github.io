@@ -40,7 +40,6 @@ nav a {
 
 main {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
   justify-content: center; /* Center-align the event blocks */
   padding: 10px;
@@ -106,6 +105,9 @@ main {
 }
 
 .event-section {
+  width: 80%; /* Set the width to 80% of the screen width */
+  margin: 20px auto; /* Auto horizontal margin to center the section */
+  text-align: center;
   background-color: #d147b3; /* Give them a background color */
   color: white;
   padding: 20px;

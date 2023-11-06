@@ -24,7 +24,6 @@ main {
   justify-content: center; /* Center-align the event blocks */
   padding: 10px;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  max-height: 100vh; /* Set a maximum height to fit the viewport */
 }
 
 .event-container {

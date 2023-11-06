@@ -35,24 +35,49 @@ body::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-/* Apply color scheme to header and navigation */
-header {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+/* Apply color scheme to main content and footer */
+
+main {
+  margin: 10px;
   text-align: center;
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center-align the event blocks */
+  padding: 10px;
+  flex-direction: column;
+  overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  padding-top: 20%; /* Add a top margin to push the content below the header */
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 .sticky-header {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s; /* Add a smooth transition effect */
+  transform: translateY(0); /* Initially, keep the header in view */
+  position: fixed;
+  width: 100%;
   z-index: 100;
+}
+
+.sticky-header.hidden {
+  transform: translateY(-100%); /* Hide the header by moving it up */
 }
 
 .sticky-header header {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 nav ul {
@@ -72,23 +97,6 @@ nav a {
   color: var(--background-color);
   text-decoration: none;
   font-weight: bold;
-}
-
-/* Apply color scheme to main content and footer */
-main {
-  margin: 20px;
-  padding: 20px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8)
-}
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-  overflow-y: auto;
-  max-height: 100vh;
 }
 
 .event-section {

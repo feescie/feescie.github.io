@@ -85,7 +85,7 @@ main {
 
 .event-title {
   font-size: 18px;
-  margin: 0;
+  margin: 5px 0;
   color: var(--text-color);
   /* flex: 1; */
 }

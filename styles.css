@@ -31,7 +31,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center-align the event blocks */
-  padding: 10px;
   flex-direction: column;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
   padding-top: 20%; /* Add a top margin to push the content below the header */
@@ -41,9 +40,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px;
   overflow-y: auto;
-  max-height: 100vh;
+  /* max-height: 100vh; */
 }
 
 .sticky-header {
@@ -60,11 +58,6 @@ main {
 
 .sticky-header.hidden {
   transform: translateY(-100%); /* Hide the header by moving it up */
-}
-
-.sticky-header header {
-  text-align: center;
-  padding: 10px;
 }
 
 nav ul {
@@ -96,7 +89,7 @@ nav a {
 /* Style for the content */
 .content {
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  padding: 20px;
+  padding: 10px;
   z-index: 1;
   text-align: center;
   position: relative;
@@ -108,7 +101,6 @@ section {
 
 .about-section, .events-section {
   background-color: white; /* White background for sections */
-  padding: 20px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;

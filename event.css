@@ -91,3 +91,33 @@ main {
 .past-event {
   background-color: #ddd; /* Background color for past events */
 }
+
+.event-section {
+  display: block;
+  margin-bottom: 20px;
+  padding: 20px;
+  color: white;
+}
+
+.upcoming-events {
+  background-color: #0277b3; /* Set the background color for Upcoming Events section */
+}
+
+.past-events {
+  background-color: #d147b3; /* Set the background color for Past Events section */
+}
+
+/* Add a parallax effect using CSS transitions */
+.event-section {
+  transform: translateZ(0);
+  transition: transform 0.5s;
+}
+
+/* Apply the parallax effect when scrolling down */
+.event-section.upcoming-events {
+  transform: translateY(-50px);
+}
+
+.event-section.past-events {
+  transform: translateY(50px);
+}

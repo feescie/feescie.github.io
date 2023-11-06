@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Events Gallery</title>
-<!--     <link rel="stylesheet" type="text/css" href="event.css"> -->
+    <link rel="stylesheet" type="text/css" href="event.css">
 </head>
 <body>
     <header>
@@ -69,11 +69,6 @@
             .catch(error => {
                 console.error('Error fetching Google Calendar data: ', error);
             });
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = 'event.css';
-            document.head.appendChild(link);
     </script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 
 /* Reset the default margin and padding for the body */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
@@ -17,25 +18,46 @@ body {
   min-height: 100vh;
 }
 
-/* Center the header text vertically and horizontally */
-.content {
+.header-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
+  background-color: var(--background-color);
+  width: 100%;
+  padding: 20px 0;
 }
 
-header {
+.sticky-header {
   background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 20px;
   text-align: center;
   width: 100%;
 }
 
-h1 {
+header {
+  color: var(--text-color);
   font-size: 2rem; /* Adjust font size as needed */
   margin: 0;
 }
+
+nav {
+  background-color: var(--background-color);
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+

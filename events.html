@@ -17,7 +17,7 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    
+
     <main>
         <h2>Upcoming Events</h2>
         <div id="upcoming-event-list"></div>
@@ -26,6 +26,14 @@
     </main>
 
     <script>
+        function formatTime(dateTimeString) {
+            const date = new Date(dateTimeString);
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+
+            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+        }
+
         // Define your API key and calendar ID
         const apiKey = 'AIzaSyD4br-t_xdQt4JF3iyhuxs37CXeQ01He40';
         const calendarId = 'feestcie@vu-orkest.nl';
@@ -66,7 +74,7 @@
 
                         // Set content for the elements
                         eventTitle.textContent = summary;
-                        eventStartDate.textContent = `Start: ${start}`;
+                        eventStartDate.textContent = `Start: ${formatTime(start)}`;
                         
                         if (attachments && attachments.length > 0) {
                             // If there are attachments, check for images and display the first one

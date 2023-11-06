@@ -18,7 +18,27 @@ body {
   font-size: 5rem;
 }
 
+nav ul {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: var(--background-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .centered-text {
   text-align: center;
 }
+
 

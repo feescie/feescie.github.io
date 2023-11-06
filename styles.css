@@ -5,59 +5,26 @@
   --background-color: #ffffff; /* White */
 }
 
-/* Apply the color scheme to elements */
+/* Reset the default margin and padding for the body */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  background: transparent;
-  height: auto;
-  overflow-x: hidden;
-}
-
-/* Apply color scheme to main content and footer */
-
-main {
-  flex-grow: 1;
-  margin: 10px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  overflow: hidden; /* Prevent body overflow */
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center-align the event blocks */
   flex-direction: column;
-  overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  padding-top: 20%; /* Add a top margin to push the content below the header */
-}
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  overflow-y: auto;
-  /* max-height: 100vh; */
+  align-items: center;
+  height: 100vh; /* 100% viewport height */
+  background-color: var(--background-color);
 }
 
+/* Adjust styles for the header and navigation */
 .sticky-header {
   background-color: var(--primary-color);
   color: var(--background-color);
   text-align: center;
-  padding: 10px;
-  transition: transform 0.3s; /* Add a smooth transition effect */
-  transform: translateY(0); /* Initially, keep the header in view */
-  position: fixed;
+  padding: 20px;
   width: 100%;
-  z-index: 100;
-}
-
-.sticky-header.hidden {
-  transform: translateY(-100%); /* Hide the header by moving it up */
 }
 
 nav ul {
@@ -77,43 +44,4 @@ nav a {
   color: var(--background-color);
   text-decoration: none;
   font-weight: bold;
-}
-
-.event-section {
-  width: 100%; /* Full width for each section */
-  margin: 20px 0; /* Adjust margin as needed */
-  text-align: center;
-}
-
-/* Style for the content */
-.content {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  padding: 10px;
-  z-index: 1;
-  text-align: center;
-  position: relative;
-}
-
-section {
-  margin-bottom: 20px;
-}
-
-.about-section, .events-section {
-  background-color: white; /* White background for sections */
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.about-section h2, .events-section h2 {
-  text-align: center;
-}
-
-footer {
-  color: #000000;
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  text-align: center;
-  padding: 10px;
 }

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feescie Commissie van het VU Orkest</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>FEESCIE</title>
+    <link rel="stylesheet" type="text/css" href="event.css">
 </head>
 <body>
     <div class="sticky-header">
@@ -21,59 +20,5 @@
             </ul>
         </nav>
     </div>
-    
-    <div class="content">
-        <main>
-            <section class="about-section">
-                <h2>Over Ons</h2>
-                <p>De Feescie Commissie van het VU Orkest is toegewijd aan het organiseren van evenementen, concerten en activiteiten voor de orkestleden.</p>
-            </section>
-    
-            <section class="events-section">
-                <h2>Aankomende Evenementen</h2>
-                <div id="event-list"></div>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2023 Feescie Commissie van het VU-Orkest</p>
-        </footer>
-    </div>
-
-    <script>
-        // Define your API key and calendar ID
-        const apiKey = 'AIzaSyD4br-t_xdQt4JF3iyhuxs37CXeQ01He40';
-        const calendarId = 'feestcie@vu-orkest.nl';
-
-        // URL to fetch calendar events
-        const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`;
-
-        // Fetch calendar events
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const events = data.items;
-
-                // Process and display the events
-                const eventListContainer = document.getElementById("event-list");
-                events.forEach(event => {
-                    const summary = event.summary;
-                    const start = event.start.dateTime;
-                    const attachments = event.attachments;
-
-                    // Create elements for the event
-                    const eventItem = document.createElement("div");
-                    const eventTitle = document.createElement("h3");
-
-                    // Set content for the elements
-                    eventTitle.textContent = summary;
-                    // Append elements to the event-list container
-                    eventItem.appendChild(eventTitle);
-                    eventListContainer.appendChild(eventItem);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching Google Calendar data: ', error);
-            });
-    </script>
 </body>
 </html>

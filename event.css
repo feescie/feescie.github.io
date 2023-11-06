@@ -16,7 +16,7 @@ header {
   background-color: var(--primary-color);
   color: var(--background-color);
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 nav ul {
@@ -29,7 +29,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 nav a {
@@ -45,7 +45,7 @@ main {
   padding: 10px;
   flex-direction: column;
   overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  padding-top: 100px; /* Add a top margin to push the content below the header */
+  padding-top: 60px; /* Add a top margin to push the content below the header */
 }
 
 .sticky-header {
@@ -94,7 +94,7 @@ main {
 
 .event-image {
   max-width: 100%;
-  max-height: 50%; /* Set a maximum height for the image */
+  max-height: 100%; /* Set a maximum height for the image */
   height: auto;
   display: block;
   margin-top: 10px;
@@ -122,8 +122,7 @@ main {
 }
 
 .event-section.upcoming-events, .event-section.past-events {
-  max-width: 100%;
-  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

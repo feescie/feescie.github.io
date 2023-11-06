@@ -6,9 +6,19 @@
     <link rel="stylesheet" type="text/css" href="event.css">
 </head>
 <body>
-    <header>
-        <h1>Events</h1>
-    </header> 
+    <div class="sticky-header">
+        <header>
+            <h1>Events</h1>
+        </header>   
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Evenementen</a></li>
+                <li><a href="about.html">Over Ons</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <div class="event-section">
@@ -85,7 +95,7 @@
 
                         // Set content for the elements
                         eventTitle.textContent = summary;
-                        eventStartDate.textContent = `${formatDateTime(start)}`;
+                        eventStartDate.textContent = `Start: ${formatDateTime(start)}`;
 
                         if (attachments && attachments.length > 0) {
                             // If there are attachments, check for images and display the first one

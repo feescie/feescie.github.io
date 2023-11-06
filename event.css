@@ -72,13 +72,14 @@ main {
 .event-container {
   background-color: var(--background-color);
   border: 1px solid #ddd;
-  margin: 10px; /* Adjust the margin for spacing between event blocks */
-  text-align: center; /* Center-align the title text */
-  padding: 10px; /* Adjust the padding for title text to fit within the width */
+  width: calc(49% - 20px); /* 49% to leave a small gap between the columns */
+  text-align: center;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center-align the content horizontally */
-  justify-content: center; /* Center-align the content vertically */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow with a bit of depth */
 }
 
 .event-title {
@@ -105,8 +106,8 @@ main {
 }
 
 .event-section {
-  width: 80%; /* Set the width to 80% of the screen width */
-  margin: 20px auto; /* Auto horizontal margin to center the section */
+  width: 100%; /* Set the width of the event section to 100% */
+  margin: 20px 0; /* Adjust margin as needed */
   text-align: center;
   background-color: #d147b3; /* Give them a background color */
   color: white;
@@ -120,7 +121,10 @@ main {
 
 .upcoming-event-list, .past-event-list{
   align-items: center; /* Center-align the content horizontally */
-  justify-content: center; /* Center-align the content vertically */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Spread items evenly between columns */
+  gap: 20px; /* Adjust the gap between event-container divs */
 }
 
 .event-section.upcoming-events, .event-section.past-events {

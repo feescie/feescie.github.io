@@ -27,6 +27,11 @@
             // Slide up effect
             const eventsPage = document.querySelector("body");
             eventsPage.style.top = "0";
+
+            // Redirect to events.html after the animation
+            setTimeout(() => {
+                window.location.href = "events.html";
+            }, 500);
         });
     </script>
 </body>

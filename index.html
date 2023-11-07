@@ -12,11 +12,22 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="events.html">Evenementen</a></li>
+                <li><a href="events.html" id="events-link">Evenementen</a></li>
                 <li><a href="about.html">Over</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </div>   
+    </div>
+    <script>
+        const eventsLink = document.getElementById("events-link");
+
+        eventsLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Slide up effect
+            const eventsPage = document.querySelector("body");
+            eventsPage.style.top = "0";
+        });
+    </script>
 </body>
 </html>

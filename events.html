@@ -142,10 +142,24 @@
                         pastEventTitle.classList.add("event-title");
                         const pastEventStartDate = document.createElement("p");
                         pastEventStartDate.classList.add("event-start-date");
+                        const pastEventImage = document.createElement("img");
+                        pastEventImage.classList.add("event-image");
 
                         // Set content for the elements
                         pastEventTitle.textContent = summary;
-                        pastEventStartDate.textContent = `Start: ${start}`;
+                        eventStartDate.textContent = `${formatTime(start)}`;
+                        
+                        if (attachments && attachments.length > 0) {
+                            // If there are attachments, check for images and display the first one
+                            const imageAttachment = attachments.find(attachment => attachment.mimeType.startsWith('image/'));
+                            if (imageAttachment) {
+                                const match = imageAttachment.fileUrl.match(/id=([^&]+)/);
+                                const imgID = match[1];
+                                pastEventImage.src = `https://drive.google.com/uc?export=view&id=${imgID}`;
+                                pastEventImage.alt = 'Event Image';
+                                pastEventItem.appendChild(eventImage);
+                            }
+                        }
 
                         // Append elements to the past event list container
                         pastEventItem.appendChild(pastEventTitle);

@@ -10,12 +10,6 @@ body {
   background-color: var(--background-color);
   margin: 0; /* Remove default body margin */
   padding: 0;
-
-  position: absolute;
-  top: 100%; /* Initially, keep the page off-screen at the bottom */
-  left: 0;
-  width: 100%;
-  transition: top 0.5s;
 }
 
 header {

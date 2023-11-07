@@ -1,0 +1,45 @@
+/* Define the color variables */
+:root {
+    --primary-color: #0277b3;
+    --text-color: #000000; /* Black */
+    --background-color: #ffffff; /* White */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav li {
+    margin: 0 20px;
+  }
+  
+  nav a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .centered-text {
+    text-align: center;
+  }
+  
+  
+  

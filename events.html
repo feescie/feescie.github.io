@@ -145,7 +145,7 @@
 
                         // Set content for the elements
                         pastEventTitle.textContent = summary;
-                        pastEventStartDate.textContent = `Start: ${start}`;
+                        pastEventStartDate.textContent = `${formatTime(start)}`;
 
                         // Append elements to the past event list container
                         pastEventItem.appendChild(pastEventTitle);

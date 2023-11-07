@@ -30,7 +30,11 @@
         </div>
         <div class="event-section past-events">
             <h2>Past Events</h2>
-            <div id="past-event-list"></div>
+            <div class="event-list-container">
+                <div id="past-event-list-left"></div>
+                <div id="past-event-list-right"></div>
+            </div>
+
         </div>
     </main>
 
@@ -81,10 +85,12 @@
                 });
 
                 // Process and display the events
-                let counter = 0;
+                let counterUp = 0;
+                let counterPast = 0;
                 const upcomingEventListLeft = document.getElementById("upcoming-event-list-left");
                 const upcomingEventListRight = document.getElementById("upcoming-event-list-right");
-                const pastEventListContainer = document.getElementById("past-event-list");
+                const pastEventListLeft = document.getElementById("past-event-list-left");
+                const pastEventListRight = document.getElementById("past-event-list-right");
                 
                 events.forEach(event => {
                     const start = new Date(event.start.dateTime);
@@ -124,12 +130,12 @@
                         eventItem.appendChild(eventTitle);
                         eventItem.appendChild(eventStartDate);
                         // Append elements to the upcoming event list container
-                        if (counter % 2 === 0) {
+                        if (counterUp % 2 === 0) {
                             upcomingEventListLeft.appendChild(eventItem);
                         } else {
                             upcomingEventListRight.appendChild(eventItem);
                         }
-                        counter++;
+                        counterUp++;
                     } else {
                         // Past event
                         const summary = event.summary;
@@ -164,7 +170,13 @@
                         // Append elements to the past event list container
                         pastEventItem.appendChild(pastEventTitle);
                         pastEventItem.appendChild(pastEventStartDate);
-                        pastEventListContainer.appendChild(pastEventItem);
+
+                        if (counterPast % 2 === 0) {
+                            pastEventListLeft.appendChild(eventItem);
+                        } else {
+                            pastEventListRight.appendChild(eventItem);
+                        }
+                        counterPast++;
                     }
                 });
             })

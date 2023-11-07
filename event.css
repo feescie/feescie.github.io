@@ -149,7 +149,9 @@ main {
 }
 
 #upcoming-event-list-left,
-#upcoming-event-list-right {
+#upcoming-event-list-right,
+#past-event-list-left,
+#past-event-list-right{
   flex: 0 0 calc(50% - 10px); /* Each column takes 50% width with a gap */
   display: flex;
   flex-wrap: wrap;

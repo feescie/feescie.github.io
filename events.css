@@ -113,6 +113,7 @@ main {
   background-color:  var(--primary-color);
   color: white;
   padding: 2.5%;
+  border-radius: 20px;
 }
 
 .event-section h2 {

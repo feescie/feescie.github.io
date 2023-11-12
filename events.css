@@ -110,7 +110,7 @@ main {
   width: 95%; /* Set the width of the event section to 100% */
   margin: 2.5% 0; /* Adjust margin as needed */
   text-align: center;
-  background-color: #d147b3; /* Give them a background color */
+  background-color:  var(--primary-color);
   color: white;
   padding: 2.5%;
 }
